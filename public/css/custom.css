@@ -1,0 +1,595 @@
+/* here you can put your own css to customize and override the theme */
+
+/***
+Rounded Portlets
+***/
+/*
+.portlet {
+	border-radius: 4px !important;
+}
+
+.portlet .portlet-title {
+	border-radius: 4px 4px 0px 0px !important;
+}
+
+.portlet .portlet-body,
+.portlet .portlet-body .form-actions  {
+	border-radius: 0px 0px 4px 4px !important;
+}
+*/
+.form-wizard .steps > li > a.step > .number{
+	margin-right: 0px;
+}
+.form-wizard .steps > li > a.step{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;	
+	row-gap: 4px;
+	color: #7d56af;
+
+}
+.form-wizard .steps > li.done > a.step .number{
+	background-color: #23527c;
+}
+.form-wizard .steps > li.active > a.step .number{
+	background-color: #79a4cb;	
+}
+.sale-primary-color{
+	background-color: #23527c;	
+	color:white;
+}
+.sale-primary-color:active, .sale-primary-color:focus{
+	color: white;
+}
+.sale-primary-forcolor{
+	color: #23527c;
+}
+.para-color, #geography, #geography_choice{
+	color:#23527c;
+}
+.component-icon{
+	color: #00174d;
+}
+.sale-primary-forcolor:hover{
+	color: #23527c;
+}
+.sale-primary-color:hover,
+.form-wizard .steps > li.active > a.step .number:hover{
+	background-color: #235270;
+	color:white;
+}
+.form-wizard .steps > li > a{
+	color: white;
+}
+.portlet > .portlet-title > .caption > i{
+	color: white;
+}
+.progress-bar{
+	background-color: #235270;	
+}
+.sales_form_wizard .form-wizard .steps > li > a.step .desc{
+	color: #23527c;
+	font-weight: 400;
+}
+.upd_btn_count  h3{
+	margin: 0;
+}
+.sex-option{
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+.form-wizard .steps > li.done > a.step .desc i{
+	color: #00174d;
+}
+.sales_form_wizard .form-body{
+	padding: 0;
+}
+.sales_form_wizard .form-body .tab-content{
+	border-top: 1px solid #e5e5e5;
+	padding: 50px 20px;
+	overflow: hidden;
+}
+.sales_form_wizard .step-container{
+	padding: 10px 20px;
+}
+.sales_form_wizard .steps li a:first-child{
+	padding-left: 0;
+	text-align: center;
+}
+.sales_form_wizard .steps li:last-child a{
+	padding-right: 0;
+}
+.sales_form_wizard .label.label-sm{
+	padding: 7px 4px 7px 4px;
+}
+.tabbable-line .nav>li>a{
+	padding: 10px 8px;
+	font-weight: 400;
+}
+
+.tabbable-line > .nav-tabs > li > a{
+	color: #23527c;	
+}
+.setting_price .portlet-body{
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.setting_price .form-body{
+	padding: 25px 10px 0 10p;
+}
+.order_confirm_form .md-checkbox label > .check{
+	border-color: #23527c
+}
+.order_confirm_form .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .help-block{
+	color: #23527c;
+}
+.icon-state-warning{
+	color: #23527c;
+}
+.sales_form_wizard .md-radio label > .check, 
+.choice_container .md-radio label > .check{
+	background-color: #030303;
+}
+.sales-btn{
+	margin-top: 0px;
+}
+.sales_form_wizard .red.btn, .choice_container .red.btn{
+	background-color: #23527c;
+}
+.sales_form_wizard .red.btn:active:hover, 
+.choice_container .red.btn:active:hover{
+	background-color: #235270;
+}
+.choice_container .tab-content{
+	border-radius: 5px;
+	min-height: 467px;
+}
+.choice_container.portlet .tabbable-line > .tab-content{
+	padding: 25px 20px;
+}
+/*footer css style start*/
+.wraper_footer.style-seven{
+	background-color: #161616;
+	position: relative;
+}
+.footer_main_item p {
+    margin-bottom: 20px;
+    font-size: 95%;
+    color: #fff;
+}
+.wraper_footer:before{
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    content: " ";
+    width: calc(50% - 290px);
+    height: 100%;
+    background-color: rgba(0,0,0,0.35);
+}
+.wraper_footer.style-seven .wraper_footer_main {
+	background-color: #00174d;
+}
+.footer_main_item {
+	margin-bottom: 30px;
+}
+.footer_main_item > *:last-child {
+	margin-bottom: 0 !important;
+}
+.footer_main_item .widget-title {
+	position: relative;
+	margin-bottom: 23px;
+	padding-bottom: 17px;
+	font-weight: 600;
+	font-size: 20px;
+	color: #fff;
+	line-height: 30px;
+}
+.footer_main_item p {
+	margin-bottom: 20px;
+	font-size: 95%;
+	color: #fff;
+}
+.wraper_footer.style-seven .wraper_footer_copyright {
+	background-color: #00174d;
+}
+.footer_copyright {
+	text-align: left;
+}
+.footer_copyright p {
+	margin-bottom: 20px;
+	font-weight: 400;
+	font-size: 16px;
+	color: #f4f4f4;
+	line-height: 28px;
+}
+.wraper_footer_main > .container {
+	padding-top: 70px;
+	padding-bottom: 0;
+}
+.tabbable-line > .nav-tabs > li > a.active {
+	border-bottom: 4px solid #23527c;
+}
+
+.tab_list li {
+    position: relative;
+	list-style: none;
+}
+
+.tab_list li label {
+    width: 100%;
+    display: flex;
+    align-items: center
+}
+
+.tab_list li span {
+    /* border-radius: 5px; */
+    /* background-color: rgba(243,240,237,.7); */
+    /* width: 100%; */
+    color: #282828;
+    font-family: "SF Pro Text";
+    font-size: 15px;
+    font-weight: 500;
+    /* padding: 15px 20px; */
+}
+
+.right-price-box .right-price-box_list,.upd_form_wrapper label p {
+    font-family: "SF Pro Text - Semibold";
+    font-weight: 400;
+    font-size: 15px
+}
+
+.tab_list li span i {
+    color: #a7a7a7;
+    margin-right: 22px
+}
+
+
+.tab_list .styled-checkbox {
+    top: 0;
+    cursor: pointer
+}
+
+.tab_list .tab_sublist {
+    padding-left: 35px;
+    display: none
+}
+
+
+input[type=checkbox],input[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+input[type=date],input[type=time],input[type=datetime-local],input[type=month] {
+    -webkit-appearance: listbox
+}
+.btn,.vis .credit {
+    -moz-user-select: none
+}
+
+.vis {
+    display: block!important
+}
+
+.vis .credit {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: all .2s ease;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: .6
+}
+
+.upd_btn,.upd_btn:hover {
+    transition: all .25s ease;
+	padding: 15px 5px;
+}
+
+.vis .credit img {
+    width: 72px
+}
+
+.vis .credit:hover {
+    -webkit-transform: scale(.95);
+    transform: scale(.95)
+}
+.fa-angle-down:before {
+    content: "\f107";
+}
+
+.fa-angle-up:before {
+    content: "\f106";
+}
+.md-checkbox label > span.inc{
+	display: block;
+	height: 21px;
+    left: 28px;
+	top: 0;
+	width: 100%;
+}
+.md-checkbox label > span.inc{
+	animation: none;
+}
+.choice_container .badge{
+	position: absolute;
+	right: 0;
+	top: 9px;
+	background: #79a4cb;
+}
+.tabbable-line > .nav-tabs > li{
+	padding-top: 10px;
+}
+.page-spinner-bar > div{
+	background: #23527c;
+}
+.page-loading{
+	background: #23527c;
+	color: white;
+	border-color: #79a4cb;
+	;
+}
+.portlet .btn-custom-default{
+	border: 1px solid #9db5dc;
+    color: #b0c3e3;
+}
+.upload-btn-wrapper input[type=file]{
+	font-size: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+/* geography list 2023-12-07*/
+.tab_list li {
+    position: relative
+}
+
+.tab_list li label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.tab_list li span {
+    border-radius: 5px;
+    background-color: rgba(243,240,237,.7);
+	/* border: 1px solid grey; */
+    width: 100%;
+    color: #282828;
+    font-family: "SF Pro Text";
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 0px;
+}
+
+.right-price-box .right-price-box_list,.upd_form_wrapper label p {
+    font-family: "SF Pro Text - Semibold";
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.tab_list li span i {
+    color: #a7a7a7;
+    margin-right: 22px;
+}
+
+.tab_list .styled-checkbox+label:before {
+    margin-right: 29px;
+}
+
+.tab_list .styled-checkbox {
+    top: 0;
+    cursor: pointer;
+}
+
+.tab_list .tab_sublist {
+    padding-left: 35px;
+    display: none;
+}
+
+
+.styled-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 24px;
+    height: 55px;
+    z-index: 555;
+}
+
+.styled-checkbox+label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+
+.styled-checkbox+label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 27px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+img,legend {
+    border: 0;
+}
+
+.styled-checkbox:checked+label:before {
+    background: #235270;
+}
+
+.styled-checkbox:checked{
+	border: 3px solid yellow !important;
+}
+.styled-checkbox:checked+label:after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 11px;
+    background: #fff;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 #fff,4px 0 0 #fff,4px -2px 0 #fff,4px -4px 0 #fff,4px -6px 0 #fff,4px -8px 0 #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.tab_list .styled-checkbox:checked+label:after{
+	left: 6px;
+    top: 50%;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+.tab_list_wrapper{	
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.choose_tab_list{
+	max-height: 445px;
+}
+.selected_tab_wrapper{
+	max-height: 420px;
+}
+.tab-content{
+	min-height: 300px;
+	max-height: 300px;
+}
+.your_choices_wrapper.tab-content{
+	min-height: 469px;
+	max-height: 469px;
+}
+p{
+	color: #737373;
+}
+.portlet .tabbable-line > .nav-tabs > li:hover{
+	border-color: #23527c;
+}
+.bg-blue{
+	font-size: 15px;;
+}
+.step-container ul.nav{
+	display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+.step-container ul.nav li{
+	width: 30%;
+}
+.page-header .mega-menu{
+	background: white;
+}
+.padding-login-row{
+	padding: 20px;
+}
+nav.admin-nav a img{
+	width: 220px;
+    height: 43px;
+}
+.flex-column li a.active{
+	background-color: #04AA6D!important;
+	color: white;
+}
+.form .mb-0{
+	margin-bottom: 0px;
+}
+.btn-center{
+	display: flex;
+	justify-content: center;	
+}
+.blockOverlay{
+	opacity: 0.3!important;
+}
+.main-content{
+	padding-top: 50px;
+}
+.counters .form-actions{
+	padding: 10px 0 0;
+}
+.order_confirm_form .form-group.form-md-line-input{
+	margin: 0 0 27px 0;
+}
+.exclude_phone li label{
+	color: #23527c;
+}
+.mailaddress_container .portlet-body{
+	border-radius: 0px;
+}
+.mailaddress_container.portlet > .portlet-title > .nav-tabs > li > a{
+	padding: 8px 45px;
+}
+.mailaddress_container ul.choose_from_address li a.active{
+    color: #333;
+    background: #fff;
+    border: 0;
+}
+ul.selected_form li a{
+	padding: 10px 16px;
+}
+ul.selected_form li a.active{
+	background-color: #23527c;
+	color: white;
+}
+ul.selected_form li .badge{
+	position: absolute;
+	top: 2px;
+	right: 3px;
+	background-color: #217ebd;
+    color: white;
+}
+.mailaddress_tab_content{
+	padding-top: 80px;
+}
+.btn-group .btn:nth-child(2){
+	border-left: 1px solid #217ebd;		
+	border-right: 1px solid #217ebd;
+}
+.mt-90{
+	margin-top: 100px;
+}
+.upd_form .form-group{
+	margin: 0;
+}
+.upd_btn_count{
+	display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+.portlet-footer{
+	background-color: #f5f5f5;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.age_validation{
+	display: none;
+}
+/***
+Responsive Utils
+***/
+@media (min-width: 768px) {
+	.step-container ul.nav li{
+		width: 100px;
+	}
+}
+@media (max-width: 992px)
+{
+	.wrapper .page-header .navbar .page-logo{
+		float: left !important;
+	}
+	.main-content{
+		padding-top: 20px;
+	}
+}

@@ -1,0 +1,48 @@
+{
+    "name": "alekserok/omnipay-payson",
+    "type": "library",
+    "description": "Payson.se Gateway for the Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "payson"
+    ],
+    "homepage": "https://github.com/alekserok/omnipay-payson",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleksandr Alekseichuk",
+            "email": "avitlauak@gmail.com"
+        }
+    ],
+    "require": {
+        "php-http/guzzle6-adapter": "^2.0",
+        "omnipay/common": "^3"
+    },
+    "require-dev": {
+        "omnipay/tests": "~3.0",
+        "squizlabs/php_codesniffer": "^3",
+        "phpro/grumphp": "^0.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Payson\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "League\\Payson\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 src/",
+        "fix-style": "phpcbf -p --standard=PSR2 src/"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
