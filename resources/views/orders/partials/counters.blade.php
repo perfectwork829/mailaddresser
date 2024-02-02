@@ -30,5 +30,5 @@
     <div class="form-actions">
         @lang('Total to pay')
         <span class="label bg-blue h2"> {{ number_format($order->total_to_pay, 2) }} kr </span>
-    </div>
-</h3>
+    </div>    
+</h3>  

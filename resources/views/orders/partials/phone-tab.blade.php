@@ -1,5 +1,5 @@
 <div class="form-group">
-    <div class="col-md-12 tab_list_wrapper">
+    <div class="col-md-12">
         <div class="md-radio-list tab_list">
             <?php $tempInd = 0; ?>
             @foreach(\App\Order::$phone_numbers as $key => $val)

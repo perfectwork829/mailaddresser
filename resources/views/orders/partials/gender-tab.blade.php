@@ -1,5 +1,5 @@
 <div class="form-group clearfix sex-option">																																
-    <div class="col-md-12">        
+    <div class="col-md-8">        
         <div class="btn-group btn-group-justified" data-toggle="buttons">
             <label class="btn blue active">                
                 <input type="radio" name="filters[gender]" id="man" class="hidden filters" value="M" {{ $order->gender == 'M' ? 'checked' : '' }}/>

@@ -4,33 +4,33 @@
 <link type="text/css" href="/css/custom.css" rel="stylesheet" media="all">
 @endsection
 @section('content')
-    <div class="row">                          
-        <div class="col-md-12 ">
-            <!-- BEGIN PAGE CONTENT-->
-            <div class="portlet box sale-primary-color mailaddress_container" id="form_wizard_1">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-credit-card"></i> Adresser till privatpersoner
-                    </div>                                                
-                </div>
-                <div class="portlet-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            @if ($errors->any())
-                                <div class="note note-info">                        
-                                    <ul class="">
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>                                    
-                            @endif 
-                        </div>
+    <div class="row">                  
+        <form role="form" class="form-horizontal filter-form search_form" id="submit_form" enctype="multipart/form-data">
+            @csrf
+            <div class="col-md-12 ">
+                <!-- BEGIN PAGE CONTENT-->
+                <div class="portlet box sale-primary-color mailaddress_container" id="form_wizard_1">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-credit-card"></i> Adresser till privatpersoner
+                        </div>                                                
                     </div>
-                    <div class="row">
-                        <div class="col-md-7"> 
-                            <form role="form" class="form-horizontal filter-form search_form" id="submit_form" enctype="multipart/form-data">
-                                @csrf
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if ($errors->any())
+                                    <div class="note note-info">                        
+                                        <ul class="">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>                                    
+                                @endif 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7"> 
                                 <ul class="nav nav-tabs choose_from_address">
                                     <li>
                                         <a href="#gender" data-toggle="tab" class="step active">                                
@@ -90,61 +90,86 @@
                                     <div class="tab-pane" id="exclude_your_own_data">
                                         @include('orders.partials.exclude-tab')																													
                                     </div>
-                                    <div class="your_choices_wrapper" style="display: none;">
-                                        @include('orders.partials.selected')
-                                    </div>                                    
-                                </div>                                
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h3 class="sale-primary-forcolor">@lang('Your Choices')</h3>
+                                <div class="your_choices_wrapper">
+                                    @include('orders.partials.selected')  
+                                </div> 
+                            </div>	
+                        </div>                        
+                    </div>  
+                    <div class="portlet-footer">
+                        <div class="row">
+                            <div class="col-md-12 upd_btn_count">
+                                <button class="upd_records btn upd_btn sale-primary-color " type="submit">
+                                    <span class="upd_btn_text">@lang('Update records')</span>                                    
+                                </button>
+                                <div class="icon-state-warning">
+                                    <h3 class="records_count">{{ number_format($order->matching_records) }}</h3>
+                                </div>
+                                <div class="records_text icon-state-warning">
+                                    @lang('matching records')
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>                 
+                </div>
+                <!-- END PAGE CONTENT-->
+            </div>            
+        </form>				
+    </div>
+    <div class="row" id="setting_price_section">
+        <div class="col-md-12">
+            <div class="portlet box sale-primary-color setting_price">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-money"></i> @lang('Setting Price')
+                    </div>                    
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form role="form" class="form-horizontal upd_form" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-body">
+                                    <div class="form-group">											
+                                        <div class="col-md-6 para-color">
+                                            <div class="input-icon right">													
+                                                <span class="help-block">@lang('Enter the desired number to purchase')</span>
+                                                <i class="fa fa-info-circle tooltips" data-original-title="Email address" data-container="body"></i>
+                                                <input type="number" class="form-control" name="number_to_purchase"  min="1" required value="{{ $order->number_to_purchase ? $order->number_to_purchase : $order->matching_records }}"/>                                            
+                                            </div>
+                                        </div>		
+                                        <div class="col-md-6 para-color">
+                                            <div class="input-icon right">													
+                                                <span class="help-block">@lang('Discount code')</span>
+                                                <i class="fa fa-info-circle tooltips" data-original-title="Email address" data-container="body"></i>
+                                                <input type="text" class="form-control" name="discount_code" value="{{ $order->discount_code }}"/>                                            
+                                            </div>
+                                        </div>									
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn sale-primary-color mt-90">@lang('Update price') <i class="m-icon-swapright m-icon-white"></i></button>
+                                        </div>
+                                    </div>
+                                </div>                            
                             </form>
                         </div>
-                        <div class="col-md-5">
-                            <div class="row">
-                                <div class="col-md-12 upd_btn_count">
-                                    <button class="upd_records btn upd_btn sale-primary-color " type="submit">
-                                        <span class="upd_btn_text">@lang('Update records')</span>                                    
-                                    </button>
-                                    <div class="icon-state-warning">
-                                        <h3 class="records_count">{{ number_format($order->matching_records) }}</h3>
-                                    </div>
-                                    <div class="records_text icon-state-warning">
-                                        @lang('matching records')
-                                    </div>
-                                </div>
-                            </div> 
-                            <div class="row" id="setting_price">
-                                <div class="col-md-12">
-                                    <form role="form" class="form-horizontal upd_form" enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="form-body">
-                                            <div class="form-group">											
-                                                <div class="input-icon right para-color">													
-                                                    <span class="help-block">@lang('Enter the desired number to purchase')</span>
-                                                    <i class="fa fa-info-circle tooltips" data-original-title="Email address" data-container="body"></i>
-                                                    <input type="number" class="form-control" name="number_to_purchase"  min="1" required value="{{ $order->number_to_purchase ? $order->number_to_purchase : $order->matching_records }}"/>                                            
-                                                </div>
-                                                <div class="input-icon right para-color">													
-                                                    <span class="help-block">@lang('Discount code')</span>
-                                                    <i class="fa fa-info-circle tooltips" data-original-title="Email address" data-container="body"></i>
-                                                    <input type="text" class="form-control" name="discount_code" value="{{ $order->discount_code }}"/>                                            
-                                                </div>
-                                                <button type="submit" class="btn sale-primary-color my-10 btn_price">@lang('Update price') <i class="m-icon-swapright m-icon-white"></i></button>
-                                            </div>
-                                        </div>                            
-                                    </form>
-                                </div>
-                                <div class="col-md-12 counters">
-                                    @include('orders.partials.counters')                                    
-                                </div>
-                            </div>  
-                        </div>	
-                    </div>                        
-                </div>  
-                <div class="portlet-footer address-footer">
-                    <button type="button" class="next_btn btn confirm-button sale-primary-color">@lang('Next') <i class="m-icon-swapright m-icon-white"></i></button>
-                </div>                 
+                        <div class="col-md-6 counters">
+                            @include('orders.partials.counters')
+                        </div>
+                    </div>                    
+                </div>
             </div>
-            <!-- END PAGE CONTENT-->
-        </div>                    		
-    </div>    
+        </div>		        	
+    </div>		
+    
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button type="button" class="next_btn btn confirm-button sale-primary-color">@lang('Next') <i class="m-icon-swapright m-icon-white"></i></button>
+        </div>
+    </div>
 @endsection
 @section('scripts')
     <script src="/js/bootstrap.min.js"></script>    
@@ -212,7 +237,25 @@
             }).done(function (data) {                
                 $('.your_choices_wrapper').empty().html(data);
             })
-        });        
+        });
+
+        $(document).on('change', '.selected', function (e) {
+            // console.log('selected cliecked', $(this).data('tab'));
+            // let tab = $(this).data('tab');
+
+            // $.ajax({
+            //     url: '/orders/selected',
+            //     method: 'POST',
+            //     data: $('.filter-form').serialize() + '&tab=' + tab,
+            //     statusCode: {
+            //         419: function (data) {
+            //             alert('@lang('Your session expired! Try to reload the page.')')
+            //         }
+            //     }
+            // }).done(function (data) {
+            //     $('.' + tab + '-tab').empty().html(data);
+            // });
+        });
 
         $(document).on('click', '.upd_btn', function (e) { //getting matching record count(OrderController@create)
             e.preventDefault();            
@@ -220,7 +263,12 @@
             Metronic.blockUI({
                 boxed: true,
                 message: 'searching...'
-            });           
+            });
+            // $('.upd_records').attr("disabled", true).toggleClass('disabled').children('.upd_btn_loader').css({
+            //     'display':'flex'
+            // });
+
+            // $('.upd_records').children('.upd_btn_text').css('display', 'none');
             console.log('selected form data', $('.filter-form').serialize());
             $.ajax({
                 url: '/orders', //OrderController@create
@@ -240,12 +288,12 @@
                 
             });
         });
-        
-        $(document).on('click', '.btn_price', function (e) { //getting matching record count(OrderController@create)
-            
-            e.preventDefault();            
-            console.log('update the price here!', $('.upd_form').serialize());
-            let form = $('.upd_form');
+
+        $(document).on('submit', '.upd_form', function (e) {// setting the price
+            e.preventDefault();
+            console.log(90);
+            console.log('update the price here!', $(this).serialize());
+            let form = $(this);
 
             Metronic.blockUI({
                 target: '#setting_price',
@@ -254,12 +302,13 @@
             $.ajax({
                 url: '/orders/counters',
                 method: 'POST',
-                data: $('.upd_form').serialize(),
+                data: $(this).serialize(),
                 statusCode: {
                     419: function (data) {
                         alert('@lang('Your session expired! Try to reload the page.')')
                     },
                     422: function (data) {
+
                         for (let k in data.responseJSON.errors) {
                             console.log(k)
                             form.find('.' + k).html(data.responseJSON.errors[k])
@@ -268,7 +317,7 @@
                 }
             }).done(function (data) {
                 console.log(data);
-                Metronic.unblockUI('#setting_price');
+                Metronic.unblockUI('#setting_price_section');
                 $('.counters').empty().html(data);
             }).fail(function (data) {
                 // console.log(data)

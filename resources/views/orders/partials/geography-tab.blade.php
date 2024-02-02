@@ -1,5 +1,5 @@
 <div class="form-group">
-    <div class="col-lg-12 col-md-12 col-sm-12 geography-tab">
+    <div class="col-lg-10 col-md-10 col-sm-10 geography-tab">
         <div class="tab_list_wrapper choose_tab_list">
             <ul class="tab_list">
                 <li class="tab_list_item">

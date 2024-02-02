@@ -75,10 +75,9 @@ Rounded Portlets
 .upd_btn_count  h3{
 	margin: 0;
 }
-.sex-option{
-	margin: 0 auto;
+.sex-option{	
 	display: flex;
-	justify-content: center;
+	justify-content: start;
 }
 .form-wizard .steps > li.done > a.step .desc i{
 	color: #00174d;
@@ -532,6 +531,8 @@ nav.admin-nav a img{
     color: #333;
     background: #fff;
     border: 0;
+	border: 1px solid #ddd;
+    border-bottom-color: transparent;
 }
 ul.selected_form li a{
 	padding: 10px 16px;
@@ -548,7 +549,10 @@ ul.selected_form li .badge{
     color: white;
 }
 .mailaddress_tab_content{
-	padding-top: 80px;
+	padding-top: 20px;
+}
+#setting_price{
+	padding-top: 30px;
 }
 .btn-group .btn:nth-child(2){
 	border-left: 1px solid #217ebd;		
@@ -557,13 +561,16 @@ ul.selected_form li .badge{
 .mt-90{
 	margin-top: 100px;
 }
+.my-10{
+	margin: 10px 0;
+}
 .upd_form .form-group{
 	margin: 0;
 }
 .upd_btn_count{
 	display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: start;
     padding: 10px;
     gap: 10px;
     align-items: center;
@@ -575,6 +582,10 @@ ul.selected_form li .badge{
 }
 .age_validation{
 	display: none;
+}
+.address-footer{
+	text-align: right;
+	padding: 10px 20px;
 }
 /***
 Responsive Utils

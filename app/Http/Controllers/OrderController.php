@@ -47,21 +47,17 @@ class OrderController extends Controller
                 Mail::to($email)->send(new Subscribe($email));
                 return new JsonResponse(['success' => true, 'message' => "Thank you for subscribing to our mail, please check your inbox"], 200);
 
-            }
-
-        
+            }        
     }
 
     public function index()
-    {
-        
+    {        
     //  $temp = Transaction::first();
     //     // dd($temp);
     //Notification::route('mail', config('custom.admin_email'))->notify(new Receipt($temp));
 
         $order = session('order');
-        if (!$order) $order = new Order();
-
+        if (!$order) $order = new Order();        
         session(['order' => $order]);
         return view('orders.index', compact('order'));
     }

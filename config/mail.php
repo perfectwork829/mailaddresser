@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.ilait.se'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'superdev829@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'personurval@adressfakta.se'),
         'name' => env('MAIL_FROM_NAME', 'SuperDev'),
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('superdev829@gmail.com'),
+    'username' => env('personurval@adressfakta.se'),
 
-    'password' => env('wjsrlgkrdnjs2'),
+    'password' => env('hQQQ!Vb3NEO$nj'),
 
     /*
     |--------------------------------------------------------------------------
