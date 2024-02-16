@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('personurval@adressfakta.se'),
+    'username' => env('MAIL_FROM_ADDRESS'),
 
-    'password' => env('hQQQ!Vb3NEO$nj'),
+    'password' => env('MAIL_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------

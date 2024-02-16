@@ -11,7 +11,7 @@
 |
 */
 
-Route::post('/', 'OrderController@subscribe')->name("route.subscribe");
+//Route::post('/', 'OrderController@subscribe')->name("route.subscribe");
 Route::get('/', 'OrderController@index')->name("home");
 Route::get('/test', 'TestController@index');
 Route::post('test', 'TestController@create');

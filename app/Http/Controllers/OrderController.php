@@ -85,7 +85,7 @@ class OrderController extends Controller
     {
         $order = Order::make($request->get('selected'));
 
-        if ($request->has('selected.excluding')) $order->exclude = session('exclude');
+        if ($request->has('filters.excluding')) $order->exclude = session('exclude');
 
         session(['order' => $order]);
 
@@ -112,14 +112,14 @@ class OrderController extends Controller
     public function create(Request $request) //to get the matching records. when clicking the matching record button.
     {
         $data = $request->only([
-            'selected.gender', 'selected.age', 'selected.geography',
-            'selected.living_type', 'selected.phone_numbers', 'selected.excluding'
+            'filters.gender', 'filters.age', 'filters.geography',
+            'filters.living_type', 'filters.phone_numbers', 'filters.excluding'
         ]);
-
-        $order = Order::make($data['selected']);        
+        
+        $order = Order::make($data['filters']);        
         $model = '\App\Address' . ucfirst($order->phone_numbers);
 
-        if ($request->has('selected.excluding')) {
+        if ($request->has('filters.excluding')) {
             $order->exclude = session('exclude');
             $order->matching_records = $model::matchingRecords($order)->count();
         } else {
@@ -210,7 +210,7 @@ class OrderController extends Controller
         }
         if (($order->totalToPay > config('custom.payson_limit')) && ($order->payment_option == Order::PAYMENT_OPTION_STRIPE))
             return redirect('/')->withErrors(__('validation.payson_limit_exceeded'));
-            //$order->payment_option = 'invoice';//remote it later                
+            //$order->payment_option = 'invoice';//remove it later
         $order->save();                
         if ($order->payment_option == 'invoice') {      
             //dd('invoice statues entered')      ;
@@ -219,12 +219,9 @@ class OrderController extends Controller
 
             return redirect('thanks')->with('order', $order);
         }
-        
         $uuidObject = $order->id; // Assuming $order->id contains the UUID object
-
         $uuidValue = $uuidObject->toString(); // Retrieve the UUID value as a string
-        //dd($uuidValue);
-        
+        //dd($uuidValue);        
 
         return redirect('transactions/' . $uuidValue);
     }

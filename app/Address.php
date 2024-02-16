@@ -38,8 +38,10 @@ class Address extends Model
     {
         if ($order->gender) $query->where('gender', $order->gender);
         if ($order->age) {
-            if ($order->age['from']) $query->where('birthdate', '<', date('Ymd', strtotime($order->age['from'] . ' years ago')))->where('birthdate', '!=', 0);
-            if ($order->age['to']) $query->where('birthdate', '>', date('Ymd', strtotime($order->age['to'] . ' years ago')));
+            if($order->age['from']!=0 || $order->age['to']!=0){
+                if ($order->age['from']) $query->where('birthdate', '<', date('Ymd', strtotime($order->age['from'] . ' years ago')))->where('birthdate', '!=', 0);
+                if ($order->age['to']) $query->where('birthdate', '>', date('Ymd', strtotime($order->age['to'] . ' years ago')));
+            }            
         }
         if ($order->geography) {
             $postCodes = PostCode::select('code');
